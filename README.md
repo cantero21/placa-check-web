@@ -15,9 +15,12 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 
 ## 📱 Capturas
 
-> *Agregar capturas de pantalla aquí*
 
----
+
+---<img width="432" height="855" alt="Captura de pantalla 2026-03-04 024632" src="https://github.com/user-attachments/assets/d442f7e6-7b11-4569-8165-b474dd7f4e8a" />
+<img width="437" height="872" alt="Captura de pantalla 2026-03-04 024508" src="https://github.com/user-attachments/assets/3b1167b4-a807-4bd2-b01c-105e450291aa" />
+
+<img width="1832" height="861" alt="Captura de pantalla 2026-03-04 024429" src="https://github.com/user-attachments/assets/6c9583c0-9483-4be8-a55b-91e6754e2eeb" />
 
 ## 🎯 Funcionalidades
 
