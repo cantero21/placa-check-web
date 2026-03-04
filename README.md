@@ -17,9 +17,9 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6c9583c0-9483-4be8-a55b-91e6754e2eeb" width="30%" />
-  <img src="https://github.com/user-attachments/assets/d442f7e6-7b11-4569-8165-b474dd7f4e8a" width="30%" />
-  <img src="https://github.com/user-attachments/assets/3b1167b4-a807-4bd2-b01c-105e450291aa" width="30%" />
+  
+  <img src="https://github.com/user-attachments/assets/d442f7e6-7b11-4569-8165-b474dd7f4e8a" width="40%" />
+  <img src="https://github.com/user-attachments/assets/3b1167b4-a807-4bd2-b01c-105e450291aa" width="40%" />
 </p>
 ## 🎯 Funcionalidades
 
