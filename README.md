@@ -1,59 +1,144 @@
-# PlacaCheckWeb
+# 🚗 PlacaCheck Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+Frontend mobile-first para búsqueda de vehículos por placa o propietario. Diseñado para ser compartido como link en grupos de WhatsApp, permitiendo consultas rápidas desde el celular sin necesidad de instalar una app.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🛠️ Tecnologías
+
+- **Angular 19** (standalone components, signals)
+- **Tailwind CSS** (estilos utilitarios)
+- **Lucide Icons** (iconografía moderna)
+- **TypeScript**
+
+---
+
+## 📱 Capturas
+
+> *Agregar capturas de pantalla aquí*
+
+---
+
+## 🎯 Funcionalidades
+
+### Vista pública (sin login)
+
+- Búsqueda por placa (parcial, case-insensitive)
+- Búsqueda por propietario (parcial, case-insensitive)
+- Diseño mobile-first optimizado para uso bajo luz solar
+- Acceso directo por link (ideal para grupos de WhatsApp)
+
+### Panel de administración (con login)
+
+- Registro de vehículos
+- Edición y eliminación
+- Lista completa de vehículos registrados
+- Formulario modal con validación
+
+---
+
+## 📐 Estructura del proyecto
+
+```
+📦 src/app
+├── components/
+│   ├── search/      → Pantalla principal de búsqueda (pública)
+│   ├── login/       → Inicio de sesión para admin
+│   └── admin/       → Panel CRUD de vehículos (protegido)
+├── services/
+│   ├── vehicle.service.ts  → Consumo de API de vehículos
+│   └── auth.service.ts     → Autenticación y manejo de JWT
+├── interceptors/
+│   └── auth.interceptor.ts → Inyección automática del token JWT
+├── models/
+│   └── vehicle.model.ts    → Interfaces TypeScript
+└── environments/
+    └── environment.ts      → URL de la API
+```
+
+---
+
+## 🔐 Autenticación
+
+- Login con JWT (almacenado en localStorage)
+- Interceptor HTTP inyecta el token automáticamente en cada petición
+- Signal reactivo `isLoggedIn` para controlar la UI
+- Redirección automática a login si no hay sesión activa
+
+---
+
+## 🎨 Diseño
+
+- **Modo claro con alto contraste** — optimizado para uso al aire libre con luz solar
+- **Mobile-first** — diseñado primero para celular, responsivo en desktop
+- **Barra de búsqueda centrada** tipo Google para acceso rápido
+- **Toggle de tipo de búsqueda** — placa o propietario
+- **Cards con información clara** — placa destacada, nombre e ícono de área
+
+---
+
+## ⚙️ Configuración
+
+```typescript
+// src/environments/environment.ts
+export const environment = {
+  apiUrl: 'http://localhost:8080/api'
+};
+```
+
+---
+
+## 🚀 Cómo ejecutar
+
+1. Clona el repositorio
+
+```bash
+git clone https://github.com/TU_USUARIO/placa-check-web.git
+cd placa-check-web
+```
+
+2. Instala dependencias
+
+```bash
+npm install
+```
+
+3. Ejecuta el proyecto
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La app estará disponible en `http://localhost:4200`
 
-## Code scaffolding
+> **Nota:** Requiere el backend corriendo en `http://localhost:8080`. Ver [placa-check-api](https://github.com/TU_USUARIO/placa-check-api)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🔗 Backend
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La API REST de esta aplicación está en un repositorio separado: [placa-check-api](https://github.com/TU_USUARIO/placa-check-api)
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 📝 Decisiones técnicas
 
-To build the project run:
+- **Standalone components** — sin NgModules, siguiendo el estándar moderno de Angular
+- **Signals** — para manejo reactivo del estado (en vez de BehaviorSubject)
+- **Functional interceptor** — usando `HttpInterceptorFn` en vez de clases
+- **Tailwind CSS** — estilos utilitarios sin archivos CSS adicionales
+- **Búsqueda por Enter** — sin debounce innecesario para mantener la simplicidad
+- **Sin registro de usuarios** — solo admin necesita login, los demás buscan libremente
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 👤 Autor
 
-## Running unit tests
+**Jesús Cantero** — Desarrollador en formación  
+Tecnólogo en Análisis y Desarrollo de Software — SENA
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## 📄 Licencia
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este proyecto es de uso educativo y personal.
