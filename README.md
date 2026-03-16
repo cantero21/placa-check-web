@@ -6,8 +6,8 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 
 ## 🛠️ Tecnologías
 
-- **Angular 19** (standalone components, signals)
-- **Tailwind CSS** (estilos utilitarios)
+- **Angular 21** (standalone components, signals)
+- **Tailwind CSS v4** (estilos utilitarios)
 - **Lucide Icons** (iconografía moderna)
 - **TypeScript**
 
@@ -15,7 +15,10 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 
 ## 📱 Capturas
 
-> *Agregar capturas de pantalla aquí*
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d442f7e6-7b11-4569-8165-b474dd7f4e8a" width="40%" />
+  <img src="https://github.com/user-attachments/assets/3b1167b4-a807-4bd2-b01c-105e450291aa" width="40%" />
+</p>
 
 ---
 
@@ -38,7 +41,6 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 ---
 
 ## 📐 Estructura del proyecto
-
 ```
 📦 src/app
 ├── components/
@@ -46,8 +48,8 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 │   ├── login/       → Inicio de sesión para admin
 │   └── admin/       → Panel CRUD de vehículos (protegido)
 ├── services/
-│   ├── vehicle.service.ts  → Consumo de API de vehículos
-│   └── auth.service.ts     → Autenticación y manejo de JWT
+│   ├── vehicle.ts   → Consumo de API de vehículos
+│   └── auth.ts      → Autenticación y manejo de JWT
 ├── interceptors/
 │   └── auth.interceptor.ts → Inyección automática del token JWT
 ├── models/
@@ -79,10 +81,10 @@ Frontend mobile-first para búsqueda de vehículos por placa o propietario. Dise
 
 ## ⚙️ Configuración
 
+Edita `src/environments/environment.ts` con la URL donde corre tu backend:
 ```typescript
-// src/environments/environment.ts
 export const environment = {
-  apiUrl: 'http://localhost:8080/api'
+  apiUrl: 'http://localhost:8080/api' // Cambia esto si tu backend corre en otro servidor
 };
 ```
 
@@ -91,27 +93,26 @@ export const environment = {
 ## 🚀 Cómo ejecutar
 
 1. Clona el repositorio
-
 ```bash
 git clone https://github.com/TU_USUARIO/placa-check-web.git
 cd placa-check-web
 ```
 
 2. Instala dependencias
-
 ```bash
 npm install
 ```
 
-3. Ejecuta el proyecto
+3. Configura la URL del backend en `src/environments/environment.ts`
 
+4. Ejecuta el proyecto
 ```bash
 ng serve
 ```
 
 La app estará disponible en `http://localhost:4200`
 
-> **Nota:** Requiere el backend corriendo en `http://localhost:8080`. Ver [placa-check-api](https://github.com/TU_USUARIO/placa-check-api)
+> **Nota:** Requiere el backend corriendo. Ver [placa-check-api](https://github.com/TU_USUARIO/placa-check-api)
 
 ---
 
@@ -126,7 +127,7 @@ La API REST de esta aplicación está en un repositorio separado: [placa-check-a
 - **Standalone components** — sin NgModules, siguiendo el estándar moderno de Angular
 - **Signals** — para manejo reactivo del estado (en vez de BehaviorSubject)
 - **Functional interceptor** — usando `HttpInterceptorFn` en vez de clases
-- **Tailwind CSS** — estilos utilitarios sin archivos CSS adicionales
+- **Tailwind CSS v4** — estilos utilitarios sin archivos CSS adicionales
 - **Búsqueda por Enter** — sin debounce innecesario para mantener la simplicidad
 - **Sin registro de usuarios** — solo admin necesita login, los demás buscan libremente
 
